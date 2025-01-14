@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './questions.module.css';
+import styles from '../questions.module.css';
 
 const Question3 = () => {
   const faturamento = [
