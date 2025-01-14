@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../questions.module.css';
+import styles from '../Questions.module.css';
 
 const Question5 = () => {
   const [inputString, setInputString] = useState('');

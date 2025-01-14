@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../questions.module.css';
+import styles from '../Questions.module.css';
 
 const Question1 = () => {
   return (
