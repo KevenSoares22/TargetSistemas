@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import styles from '../Questions.module.css';
 
 const Question4 = () => {
@@ -27,9 +27,9 @@ const Question4 = () => {
       <div className={styles['question-card']}>
         <h3>Questão 4</h3>
         <p>Percentual de faturamento por estado</p>
-        {Object.entries(percentual).map(([estado, perc]) => (
+        {Object.entries(faturamento).map(([estado, valor]) => (
           <p key={estado}>
-            <strong>{estado}:</strong> {perc}%
+            <strong>{estado}:</strong> R${valor.toFixed(2)} - {percentual[estado]}%
           </p>
         ))}
       </div>

@@ -10,7 +10,7 @@ const Question3 = () => {
     { dia: 5, valor: 600 },
     { dia: 6, valor: 0 },
     { dia: 7, valor: 900 },
-    // Exemplo simplificado, pode continuar...
+    
   ];
 
   const calcularFaturamento = () => {
