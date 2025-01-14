@@ -1,0 +1,33 @@
+CREATE TABLE Users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    identity VARCHAR(255) NOT NULL,
+    isAdmin BOOLEAN NOT NULL DEFAULT 0,
+    birthdate DATE NOT NULL,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    seniority ENUM('junior', 'pleno', 'senior', 'estágiario') NOT NULL,
+    function VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Clients (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    identity VARCHAR(255) NOT NULL,
+    hourPrice DECIMAL(10, 2) NOT NULL,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    factoryName VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Reports (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    clientId INT NOT NULL,
+    userId INT NOT NULL,
+    entryHour VARCHAR(5) NOT NULL, -- Hora no formato 'HH:MM'
+    conclusionHour VARCHAR(5) NOT NULL, -- Hora no formato 'HH:MM'
+    freeTime VARCHAR(5), -- Hora no formato 'HH:MM'
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    description TEXT,
+    payedValue DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (clientId) REFERENCES Clients(id),
+    FOREIGN KEY (userId) REFERENCES Users(id)
+);
